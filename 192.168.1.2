@@ -1,0 +1,124 @@
+
+!
+version 12.1
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname SJ1
+!
+!
+username loic password 0 bonjour
+ip subnet-zero
+!
+no ip domain-lookup
+ip domain-name stevens.com
+ip ssh time-out 120
+ip ssh authentication-retries 3
+vtp domain dess
+vtp mode transparent
+!
+spanning-tree mode pvst
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan 1
+ tb-vlan1 1002
+ tb-vlan2 1003
+!
+vlan 2
+ name comptabilite
+!
+vlan 3
+ name production
+!
+vlan 1002
+ tb-vlan1 1
+ tb-vlan2 1003
+!
+vlan 1003
+ tb-vlan1 1
+ tb-vlan2 1002
+ parent 1005
+!
+vlan 1004
+ bridge 1
+ stp type ibm
+!
+vlan 1005
+ bridge 15
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.1.1 255.255.255.0
+ no ip route-cache
+!
+ip http server
+!
+line con 0
+ password bonjour
+ login
+line vty 0 4
+ password bonjour
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+end
