@@ -17,8 +17,15 @@ login username password XXXX
 **OU**
 
 login local (Va chercher dans la config globale=> Configurée avec username)
+
 ## Bloquer un port
 
 line XX X X
 
 login -> Attends un login
+
+## Ping
+
+De base UNICAST => Si l'hôte se déconnecte on passe en multicast
+
+## Port security
