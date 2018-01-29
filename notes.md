@@ -29,3 +29,7 @@ login -> Attends un login
 De base UNICAST => Si l'hôte se déconnecte on passe en multicast
 
 ## Port security
+
+## Bridge
+
+http://www.tldp.org/HOWTO/BRIDGE-STP-HOWTO/set-up-the-bridge.html
